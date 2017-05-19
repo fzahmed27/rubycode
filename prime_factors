@@ -1,0 +1,18 @@
+# recurrsive function
+
+
+def fibs_num(n)
+	t1 = 1
+	t2 = 1
+	next_term = t1+t2
+	arr =[t1,t2]
+	while next_term <= n
+		t1= t2
+		t2 = next_term
+		next_term = t1+t2
+		arr << t2
+	end
+	puts arr
+end
+
+fibs_num(50)

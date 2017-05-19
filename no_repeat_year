@@ -1,0 +1,21 @@
+def not_repeat_year?(year)
+  year_str = year.to_s
+  i = 0 
+  digit1 = year_str[i]
+  while i < year_str.length
+    j = 0
+
+    while j < year_str.length
+      digit2 = year_str[j]
+      puts  digit2
+      if i != j && digit1[i] == digit2[j]
+        return true
+      end
+      j += 1
+    end
+    i  += 1
+  end
+  false
+end
+
+puts not_repeat_year?(190)

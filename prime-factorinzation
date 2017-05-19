@@ -1,0 +1,13 @@
+def prime_factors(n)
+	i = 2
+	while i != n
+		if n % i == 0
+			counter = 0
+			while n 
+
+
+end
+
+
+
+puts prime_factors(10)

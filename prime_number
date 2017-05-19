@@ -1,0 +1,8 @@
+str = "Pirates say arrrrrrrrr."
+letter ='r'
+
+def comes_after(str,letter)
+   str.scan(/r/)
+end
+
+puts comes_after(str,letter)

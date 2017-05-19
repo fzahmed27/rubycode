@@ -1,0 +1,28 @@
+def most_common_letter(string)
+	most_common_let = nil
+	most_common_let_count = nil
+
+	indx1 = 0 
+	while indx1 < string.length
+		letter = string[indx1]
+		count = 0 
+
+		indx2 = 0 
+		while indx2 < string.length
+			if string[indx2] == letter
+				count += 1
+			end
+			indx2 += 1
+		end
+
+		if (most_common_let == nil || count > most_common_let_count )
+			most_common_let = letter
+			most_common_let_count = count
+		end
+	 indx1 += 1
+	end
+	return [ most_common_let, most_common_let_count]
+end
+
+
+puts most_common_letter("abvvva")

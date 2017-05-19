@@ -1,0 +1,5 @@
+def not_repeat_year?(year)
+	year_str  = year.to_s
+	
+ 
+end

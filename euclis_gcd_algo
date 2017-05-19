@@ -1,0 +1,20 @@
+def euclids_gcd(a , b)
+
+	if a > b 
+		divident = a
+		divisor = b
+	elsif a < b 
+		divident = b
+		divisor = a
+	end
+
+	while divisor != 0 
+		rem = divident % divisor
+		divident = divisor
+		divisor = rem
+	end
+
+	return divident
+end
+
+puts euclids_gcd(105 , 350)
