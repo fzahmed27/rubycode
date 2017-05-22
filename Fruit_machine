@@ -1,0 +1,41 @@
+def fruits(reels, spins)
+	#create a hash with score
+
+	score = {"Wild"=> 10, "Star" => 9, "Bell" => 8, "Shell"=>7, 
+		             "Seven"=>6,"Cherry" => 5, "Bar"=>4, 
+		             "King"=> 3, "Queen"=> 2, "Jack"=>1 }
+	fruit_arr =[]	             
+    spins.each_with_index do |spin, i|
+    	fruit_arr << reels[i][spin]
+    end
+    fruit_count = fruit_arr.uniq.length
+	# three fuits are different, zero score, two & wild double
+	if fruit_count == 3
+		return 0
+    elsif fruit_count == 2
+    	  fruit_arr.each do|fruit|
+    	  	if !fruit_arr.include?("Wild") 
+    	  		return score[fruit] if fruit_arr.count(fruit) == 2 
+    	  	elsif fruit_arr.count("Wild") == 2
+    	  		return score["Wild"]
+    	  	else
+    	  		return score[fruit]*2 if fruit_arr.count(fruit) == 2
+    	  	end
+    	end
+    else fruit_count == 1
+    	return score[fruit_arr[0]]*10
+    end
+
+end
+
+
+
+puts "----------Test----------------------------------"
+reel1 = ["King", "Jack", "Wild", "Bell", "Star", "Seven", "Queen", "Cherry", "Shell", "Bar"]
+reel2 = ["Star", "Bar", "Jack", "Seven", "Queen", "Wild", "King", "Bell", "Cherry", "Shell"]
+reel3 = ["King", "Bell", "Jack", "Shell", "Star", "Cherry", "Queen", "Bar", "Wild", "Seven"]
+spin = [0,5,0]
+p fruits([reel1,reel2,reel3], spin)
+
+
+

@@ -1,0 +1,24 @@
+def validBraces(s)
+  arr = []
+  p s
+  s.chars.each do |curr|
+    if curr == "{" || curr == "(" || curr == "["
+      arr << curr 
+    end
+    if curr == "}" || curr == "]" || curr == ")"
+       return false if arr.empty?
+       open = arr.last
+       
+       if curr == "}" && open == "{" || curr == "]" && open == "[" || curr == ")" && open == "("
+          arr.pop
+       else
+          return false
+        end  
+    end
+  end
+  arr.empty? ? true:false
+end
+
+
+p validBraces("(([]))")
+

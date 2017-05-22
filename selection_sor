@@ -1,0 +1,14 @@
+def selection_sort(arr, n)
+	sort_arr =[]
+
+ 
+
+end
+
+def swap(arr)
+
+
+end
+
+p swap([1,2])
+

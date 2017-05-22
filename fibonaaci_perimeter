@@ -1,0 +1,18 @@
+def fibonacci_perimeter(n)
+    arr =[]
+    first_no = 0
+    second_no =  1
+    next_no= first_no + second_no
+    arr << first_no
+    arr << second_no
+    while arr.length  <= (n+1)
+    	first_no = second_no
+    	second_no = next_no
+    	next_no = first_no + second_no
+    	arr << second_no
+    end
+     arr
+    perimeter = 4*arr.reduce(:+)  
+end
+
+p fibonacci_perimeter(30)

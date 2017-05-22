@@ -1,0 +1,11 @@
+def queue_time(customers, n)
+time = 0 
+customers.each do |wait_time|
+   if n == 1
+   	time += waitime
+   elsif if n >= 2
+   		
+
+  
+
+end

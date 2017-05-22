@@ -1,0 +1,5 @@
+
+
+ string = 'eardruet'
+
+ p string.reverse.sub(/[aeiouAEIOU]/, "").reverse

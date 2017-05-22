@@ -1,0 +1,32 @@
+def euclids_gcd(a , b)
+
+	if a > b 
+		divident = a
+		divisor = b
+	elsif a < b 
+		divident = b
+		divisor = a
+	end
+
+	while divisor != 0 
+		rem = divident % divisor
+		divident = divisor
+		divisor = rem
+	end
+
+	return divident
+end
+
+
+
+def proper_fractions(n)
+	count = 0 
+	return 0 if n == 0 or n ==1
+		(1...n).step(1) do |num|
+			count+=1  if euclids_gcd(num,n) == 1
+		end
+	count
+end
+
+p proper_fractions(15)
+	

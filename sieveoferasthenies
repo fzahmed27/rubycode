@@ -1,0 +1,26 @@
+def prime_num(max)
+ # initialize an array upto max 
+  primes = (0..max).to_a
+  primes[0] = nil
+  primes[1] = nil
+  count =  0 
+  primes.each do |p|
+    next unless p 
+    # break the loop at the square root of number
+    break if p*p > max
+    count += 1 
+
+    # start from square of the number and step throug the
+    #multiples of number and replace the array value as 
+    # nil at the indecies
+    (p*p).step(max, p) {|m| primes[m] = nil}
+
+  end
+  puts "solved #{max} in #{count} steps"
+  primes.compact
+
+end
+
+
+
+p prime_num(100)

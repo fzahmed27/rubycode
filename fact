@@ -1,0 +1,8 @@
+
+def divisors(n)
+  divisors = (2...n).select{|item| n % item == 0}
+  divisors.empty? ? "#{n} is prime" : divisors
+end
+
+
+p divisors(253)

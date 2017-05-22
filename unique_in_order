@@ -1,0 +1,12 @@
+def unique_in_order(iterable)
+	case iterable
+	when String
+		iterable.gsub(/(.)\1+/, '\1')
+	when Array
+		iterable.uniq
+	end
+end
+puts"-------TEST----------------------"
+p unique_in_order([1,2,3,3,4]) == [1,2,3,4]
+p unique_in_order("aaabbaccdd") == "abacd"
+p unique_in_order("aABbd") == "aABbd"
